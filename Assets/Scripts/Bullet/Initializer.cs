@@ -25,7 +25,7 @@ namespace Bullet
 
         public void UpdateDamage(float damage) => _damage = damage;
 
-        public void InitKritBullet(int coef)
+        public void InitKritBullet(float coef)
         {
             var instance = pool.GetInstance();
             instance.SetDamage(_damage * coef);

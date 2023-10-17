@@ -2138,11 +2138,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efce6539b1ef43f9ae5690e319f44453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  descriptor: {fileID: 11400000, guid: d0bd88462aeefa7469824e51eb64fcca, type: 2}
   healthStatsBehaviour: {fileID: 519409684}
   manaStatsBehaviour: {fileID: 519409686}
   stopObserver: {fileID: 1185448000}
   joystickListener: {fileID: 519409681}
+  movementBehaviour: {fileID: 519409682}
   initializer: {fileID: 519409685}
   replayBehaviour: {fileID: 1288012129}
 --- !u!114 &519409684

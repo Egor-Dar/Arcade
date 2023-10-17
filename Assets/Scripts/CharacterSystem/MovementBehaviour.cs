@@ -6,6 +6,7 @@ namespace CharacterSystem
     {
         [SerializeField] private Rigidbody2D rigidbody2D;
         [SerializeField] private float speed;
+        public void SetMovementSpeed(float speed) => this.speed = speed;
 
         public void Move(Vector2 direction)
         {
