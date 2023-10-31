@@ -17,6 +17,7 @@ namespace Bullet
             {
                 SetVisible(false);
                 rigidbody2D.velocity = Vector2.zero;
+                rigidbody2D.simulated = false;
                 ReturnInPoolEvent?.Invoke(this);
             };
         }
@@ -24,6 +25,7 @@ namespace Bullet
         public void Init()
         {
             SetVisible(true);
+            rigidbody2D.simulated = true;
         }
 
         public void SetPosition(Vector3 position)

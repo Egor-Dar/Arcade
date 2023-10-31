@@ -7,19 +7,23 @@ namespace Pool
     public class BasePool<T> : MonoBehaviour where T : MonoBehaviour, IPoolable<T>
     {
         [SerializeField] protected T prefab;
-        [SerializeField] private int countInAwake;
+        [SerializeField] protected int countInAwake;
         protected Queue<T> _instances;
         public event Action InitializeFinished;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _instances = new Queue<T>();
             for (int i = 0; i < countInAwake; i++)
             {
                 AddNewInstance();
             }
-            InitializeFinished?.Invoke();
+
+            InitializeCallBack();
         }
+
+        protected void InitializeCallBack() => InitializeFinished?.Invoke();
+
 
         protected virtual void AddNewInstance()
         {
@@ -41,6 +45,7 @@ namespace Pool
             {
                 AddNewInstance();
             }
+
             return _instances.Dequeue();
         }
     }

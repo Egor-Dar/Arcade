@@ -15,6 +15,7 @@ namespace Bullet
 
         private void Awake()
         {
+            pool.Initialize(true);
             _spawn = StartCoroutine(InitLoop());
         }
 

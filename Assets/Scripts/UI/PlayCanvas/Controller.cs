@@ -13,6 +13,7 @@ namespace UI.PlayCanvas
         [SerializeField] private CharacterSystem.Enemy.Container enemy;
         [SerializeField] private StopObserver stopObserver;
         [SerializeField] private ReplayBehaviour replayBehaviour;
+        [SerializeField] private Timer timer;
         private CanvasRechanger _canvasRechanger;
         private bool _isFinish;
 
@@ -34,6 +35,7 @@ namespace UI.PlayCanvas
             _isFinish = false;
             StartCoroutine(StopDelay());
             _canvasRechanger.SetNewPanel(gameScreen);
+            timer.StartNewTimer();
         }
 
         private IEnumerator StopDelay()
@@ -48,6 +50,7 @@ namespace UI.PlayCanvas
             _isFinish = true;
             stopObserver.OnStopCallback(true);
             _canvasRechanger.SetNewPanel(loseScreen);
+            timer.PauseTimer();
         }
 
         private void SetWinScreen()
