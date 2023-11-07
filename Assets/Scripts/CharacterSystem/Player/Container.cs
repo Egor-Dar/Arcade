@@ -15,6 +15,7 @@ namespace CharacterSystem.Player
         [SerializeField] private StopObserver stopObserver;
         [SerializeField] private JoystickListener joystickListener;
         [SerializeField] private MovementBehaviour movementBehaviour;
+        [SerializeField] private AnimationBehaviour animationBehaviour;
 
         [FormerlySerializedAs("bulletSpawner")] [SerializeField]
         private Initializer initializer;
@@ -25,6 +26,7 @@ namespace CharacterSystem.Player
         public IReplenishmentView ManaView { get; private set; }
         public bool IsEnemy => false;
         private float _coefDamage;
+        private bool _isStop = false;
 
         private void Awake()
         {
@@ -40,6 +42,26 @@ namespace CharacterSystem.Player
             replayBehaviour.ReplayEvent += Replay;
             ManaView.OnManaChangeEvent += CheckManaAndShotKrit;
             movementBehaviour.SetMovementSpeed(descriptor.MovementSpeed);
+            joystickListener.UpdateDirectionEvent += movementBehaviour.Move;
+            joystickListener.UpdateDirectionEvent += UpdateAnimation;
+            stopObserver.Subscribe(value => _isStop = value);
+            HealView.OnDeathEvent += animationBehaviour.SetDeath;
+        }
+
+        private void UpdateAnimation(Vector2 direction)
+        {
+            if (_isStop) return;
+            animationBehaviour.Flip(direction.x < 0.1f);
+            if (direction == Vector2.zero)
+            {
+                animationBehaviour.SetIdle(true);
+                animationBehaviour.SetRun(false);
+            }
+            else
+            {
+                animationBehaviour.SetIdle(false);
+                animationBehaviour.SetRun(true);
+            }
         }
 
         private void Replay()
