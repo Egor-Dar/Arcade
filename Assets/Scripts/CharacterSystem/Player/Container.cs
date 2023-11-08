@@ -46,6 +46,7 @@ namespace CharacterSystem.Player
             joystickListener.UpdateDirectionEvent += UpdateAnimation;
             stopObserver.Subscribe(value => _isStop = value);
             HealView.OnDeathEvent += animationBehaviour.SetDeath;
+            HealView.OnDeathEvent += () => animationBehaviour.SetIdle(false);
         }
 
         private void UpdateAnimation(Vector2 direction)
