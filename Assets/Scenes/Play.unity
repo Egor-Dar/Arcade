@@ -402,7 +402,7 @@ MonoBehaviour:
   followerBehaviour: {fileID: 124438099}
   stopObserver: {fileID: 1185448000}
   replayBehaviour: {fileID: 1288012129}
-  upgradeDescriptor: {fileID: 11400000, guid: 545d482f5a8f30b4e933c8880f32eb9e, type: 2}
+  upgradeDescriptor: {fileID: 11400000, guid: 594febe19ea8b2848a012b0993a36e5d, type: 2}
   bulletPool: {fileID: 1319702172}
   timer: {fileID: 1281760099}
 --- !u!114 &124438101
