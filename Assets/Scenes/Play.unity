@@ -359,8 +359,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124438093}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.13, y: 3.88, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalPosition: {x: 0, y: 3.88, z: 0}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1612735103}
@@ -402,7 +402,7 @@ MonoBehaviour:
   followerBehaviour: {fileID: 124438099}
   stopObserver: {fileID: 1185448000}
   replayBehaviour: {fileID: 1288012129}
-  upgradeDescriptor: {fileID: 11400000, guid: 594febe19ea8b2848a012b0993a36e5d, type: 2}
+  upgradeDescriptor: {fileID: 11400000, guid: 33503a5dd82b6134d813d8342184c96e, type: 2}
   bulletPool: {fileID: 1319702172}
   timer: {fileID: 1281760099}
 --- !u!114 &124438101
@@ -2210,8 +2210,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519409676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.13, y: -1.69, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: -1.69, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1181776650}
@@ -2245,7 +2245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 519409677}
-  speed: 4.5
+  speed: 4.75
 --- !u!114 &519409683
 MonoBehaviour:
   m_ObjectHideFlags: 0
